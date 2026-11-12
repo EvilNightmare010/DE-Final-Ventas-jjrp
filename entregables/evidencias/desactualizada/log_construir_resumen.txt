@@ -1,0 +1,1 @@
+SIN LOG: la tarea construir_resumen no se ejecuto en esta corrida
