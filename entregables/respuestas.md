@@ -9,3 +9,11 @@
 ## 2. ¿Por qué las pruebas de integridad no garantizan actualidad?
 
 Las pruebas (`unique`, `not_null` y los valores válidos) solo revisan la calidad de las filas que ya existen: que no se repitan, que no falten campos y que los valores sean razonables. No miran cuándo llegó el dato. Una tabla con datos de hace una semana cumple todas esas pruebas, porque los datos viejos siguen siendo únicos y completos. Por eso `dbt build` termina en verde aunque la fuente esté desactualizada. Además, `dbt build` no ejecuta `source freshness`, así que hace falta una tarea aparte (`verificar_freshness`) antes de construir el resumen. En el escenario `desactualizada` el modelo y sus pruebas habrían pasado, pero freshness falla y bloquea `construir_resumen` (`upstream_failed`), con lo que el resumen anterior se conserva.
+
+---
+
+## Hilo de la IA
+
+Para resolver este examen se usó un asistente de IA (Claude). El hilo completo de la conversación está en este enlace: https://claude.ai/share/6c21f893-2e1b-4caf-bf0c-c2350794994c
+
+El enlace también se guardó en `entregables/hilo_IA/enlace_hilo.md`.
